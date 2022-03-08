@@ -10,6 +10,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -102,14 +103,33 @@ fun CategoryCardItem(
             .background(color = Color.Gray, shape = RoundedCornerShape(size = 8.dp))
             .clip(shape = RoundedCornerShape(size = 8.dp))
     ) {
-        Text(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(all = 8.dp),
-            text = categoryList.name,
-            fontWeight = FontWeight.Bold,
-            textAlign = TextAlign.Center
-        )
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Icon(
+                modifier = Modifier
+                    .weight(0.2f)
+                    .padding(all = 8.dp),
+                painter = painterResource("images/add.png"),
+                contentDescription = "Category Icon"
+            )
+            Text(
+                modifier = Modifier
+                    .weight(0.7f)
+                    .padding(all = 8.dp),
+                text = categoryList.name,
+                fontWeight = FontWeight.SemiBold
+            )
+            Text(
+                modifier = Modifier
+                    .weight(0.1f)
+                    .padding(all = 8.dp),
+                text = "${categoryList.numberOfTasks}",
+                fontWeight = FontWeight.SemiBold,
+                textAlign = TextAlign.Center
+            )
+        }
     }
 }
 
