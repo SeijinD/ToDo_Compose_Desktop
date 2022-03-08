@@ -22,6 +22,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import model.CategoryList
 
 @Composable
 fun HomeScreen(
@@ -50,8 +51,7 @@ fun HomeContent(
                 modifier = Modifier
                     .weight(0.9f)
                     .fillMaxSize(),
-                verticalArrangement = Arrangement.spacedBy(space = 8.dp),
-                contentPadding = PaddingValues(all = 8.dp)
+                contentPadding = PaddingValues(all = 4.dp)
             ) {
                 items(items, key = { item -> item.id }) { categoryList ->
                     CategoryCardItem(categoryList = categoryList)
@@ -63,7 +63,7 @@ fun HomeContent(
                     .padding(all = 8.dp)
                     .background(
                         shape = CircleShape,
-                        color = Color.Magenta
+                        color = Color.Gray
                     ),
                 onClick = {}
             ) {
@@ -80,7 +80,24 @@ fun HomeContent(
                 .fillMaxSize()
                 .border(width = 2.dp, color = Color.Black)
         ) {
+            Column(
+                modifier = Modifier
+                    .weight(0.35f)
+                    .fillMaxSize()
+            ) {
+                Row(
 
+                ) {
+
+                }
+            }
+            Column(
+                modifier = Modifier
+                    .weight(0.65f)
+                    .fillMaxSize()
+            ) {
+
+            }
         }
     }
 }

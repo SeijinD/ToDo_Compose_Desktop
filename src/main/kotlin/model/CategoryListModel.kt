@@ -1,4 +1,4 @@
-package composables.home
+package model
 
 data class CategoryList(
     val id: Int = 0,
