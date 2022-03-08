@@ -28,11 +28,7 @@ fun HomeScreen(
 
 ) {
     HomeContent(
-        items = listOf(
-            CategoryList(0, "Work"),
-            CategoryList(1, "University"),
-            CategoryList(2, "Personal")
-        )
+        items = emptyList()
     )
 }
 
@@ -111,7 +107,7 @@ fun CategoryCardItem(
                 modifier = Modifier
                     .weight(0.2f)
                     .padding(all = 8.dp),
-                painter = painterResource("images/add.png"),
+                painter = painterResource(categoryList.category.categoryIcon),
                 contentDescription = "Category Icon"
             )
             Text(
